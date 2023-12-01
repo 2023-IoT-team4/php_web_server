@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+
+<body>
+    <!-- led 전송
+
+    <form name="updateShadow" method="post" action="desired.php">
+        <input type="text" name="led">
+        <input type="submit" value="전송">
+    </form>
+
+    <div id="log">
+        topic message :
+    </div>
+
+    <button name="af" onclick=myclick()>토픽 메세지 확인</button> -->
+    <div class="title">
+        <h1>밥 줘</h1>
+
+    </div>
+
+    <div class="info_wrapper">
+        <p id="sensor_info">
+            temp : 10
+        </p>
+    </div>
+
+    <div class="wrapper">
+        <div class="timer-display">00:00:00</div>
+        <div class="container">
+            <div class="inputs">
+                <div class="input_block">
+                    <p>시</p>
+                    <input type="number" id="hourInput" placeholder="00" min="0" max="23" />
+                </div>
+                <div class="input_block">
+                    <p>분</p>
+                    <input type="number" id="minuteInput" placeholder="00" min="0" max="59" />
+                </div>
+                <div class="input_block">
+                    <p>횟수</p>
+                    <input type="number" id="amountInput" placeholder="00" min="0" max="10" />
+                </div>
+            </div>
+            <button id="set">Add Alarm</button>
+            <div class="activeAlarms"></div>
+        </div>
+    </div>
+
+    <div class="cam_wrapper">
+        <img id="cctv" class="cctv" src="cctv.png">
+        <div class="line">
+
+        </div>
+        <img class="dog-food" src="dog-food.png">
+        <div class="feed_immediately">
+            <input id="imm_feed_input" type="text" name="imm_feed_amount" placeholder="횟수">
+            <br>
+            <button id="imm_feed_btn" name="imm_feed_btn">즉시 밥 주기</button>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
