@@ -11,13 +11,12 @@ function get_sensor_data() {
             var temp = reported.temp;
             var press = reported.press;
             var left_feed = reported.feed_enough;
-            var ip_addr = reported.espcam_ip;
 
             var feed_given = new Date(data.metadata.reported.feed_given.timestamp * 1000).toLocaleTimeString();
 
             payload = "온도 : " + temp + "<br>" + "습도 : " + humid + "<br>" + "기압 : " + press;
             payload += "<br>" + "마지막으로 밥 준 시간 : " + feed_given + "<br>";
-            payload += "남은 사료량 : " + left_feed;
+            payload += "남은 사료량 : " + left_feed + "%";
             document.getElementById("sensor_info").innerHTML = payload;
 
             // document.getElementById("cctv").addEventListener("click", goto_cam(ip_addr));
@@ -133,10 +132,14 @@ function request_erase_time(alarmObj) {
 }
 
 // esp32 cam의 페이지로 이동
-function goto_cam(ip_addr) {
-    alert("esp cam 으로 이동!");
-    location.href = "http://15.164.12.220:8000/client";
+function goto_cam() {
+    location.href = "";
 
+}
+
+// gallery.html로 이동 
+function goto_gallery() {
+    location.href = "";
 }
 
 //Initial References
@@ -296,10 +299,10 @@ window.addEventListener('DOMContentLoaded', function () {
     this.document.getElementById('imm_feed_btn').addEventListener("click", feed_immediately);
 
     this.document.getElementById('cctv').addEventListener("click", goto_cam);
+    this.document.getElementById('gallery').addEventListener("click", goto_gallery);
 
     //Set Alarm
     setAlarm.addEventListener("click", () => {
-	console.log("clicked");
         alarmIndex += 1;
 
         //alarmObject
@@ -314,6 +317,7 @@ window.addEventListener('DOMContentLoaded', function () {
         hourInput.value = appendZero(initialHour);
         minuteInput.value = appendZero(initialMinute);
         amountInput.value = appendZero(initialAmount);
+
     })
 
     get_sensor_data();
@@ -324,8 +328,6 @@ window.onload = () => {
     initialHour = 0;
     initialMinute = 0;
     initialAmount = 0;
-    alarmIndex = 0;
-    alarmsArray = [];
     hourInput.value = appendZero(initialHour);
     minuteInput.value = appendZero(initialMinute);
     amountInput.value = appendZero(initialAmount);
