@@ -25,43 +25,45 @@
 
     <button name="af" onclick=myclick()>토픽 메세지 확인</button> -->
     <div class="title">
-        <h1>밥 줘</h1>
+        <h1>Smart Pet Partner</h1>
 
     </div>
 
-    <div class="info_wrapper">
-        <p id="sensor_info">
-            temp : 10
-        </p>
-    </div>
+    <div class="total_wrapper">
 
-    <div class="wrapper">
-        <div class="timer-display">00:00:00</div>
-        <div class="container">
-            <div class="inputs">
-                <div class="input_block">
-                    <p>시</p>
-                    <input type="number" id="hourInput" placeholder="00" min="0" max="23" />
+        <div class="info_wrapper">
+            <p id="sensor_info">
+                temp : 10
+            </p>
+        </div>
+
+        <div class="wrapper">
+            <div class="timer-display">00:00:00</div>
+            <div class="container">
+                <div class="inputs">
+                    <div class="input_block">
+                        <p>시</p>
+                        <input type="number" id="hourInput" placeholder="00" min="0" max="23" />
+                    </div>
+                    <div class="input_block">
+                        <p>분</p>
+                        <input type="number" id="minuteInput" placeholder="00" min="0" max="59" />
+                    </div>
+                    <div class="input_block">
+                        <p>횟수</p>
+                        <input type="number" id="amountInput" placeholder="00" min="0" max="10" />
+                    </div>
                 </div>
-                <div class="input_block">
-                    <p>분</p>
-                    <input type="number" id="minuteInput" placeholder="00" min="0" max="59" />
-                </div>
-                <div class="input_block">
-                    <p>횟수</p>
-                    <input type="number" id="amountInput" placeholder="00" min="0" max="10" />
-                </div>
+                <button id="set">Add Alarm</button>
+                <div class="activeAlarms"></div>
             </div>
-            <button id="set">Add Alarm</button>
-            <div class="activeAlarms"></div>
         </div>
     </div>
 
+    </div>
     <div class="cam_wrapper">
+        <img id="gallery" class="gallery" src="gallery.png">
         <img id="cctv" class="cctv" src="cctv.png">
-        <div class="line">
-
-        </div>
         <img class="dog-food" src="dog-food.png">
         <div class="feed_immediately">
             <input id="imm_feed_input" type="text" name="imm_feed_amount" placeholder="횟수">
